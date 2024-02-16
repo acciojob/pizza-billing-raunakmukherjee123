@@ -48,7 +48,12 @@ public class Pizza {
     }
 
     public String getBill(){
-        bill+="Base Price Of The Pizza: "+getPrice()+"/n";
+        if(isVeg) {
+            bill += "Base Price Of The Pizza: " + 300 + "/n";
+        }
+        else {
+            bill += "Base Price Of The Pizza: " + 400 + "/n";
+        }
         if(f1==1)
         {
             bill+="Extra Cheese Added: 80"+"/n";
@@ -65,7 +70,7 @@ public class Pizza {
          {
              bill+="Paperbag Added: 20"+"/n";
          }
-         bill+="Total Price: "+price;
+         bill+="Total Price: "+this.price;
         return this.bill;
     }
 }
