@@ -5,7 +5,7 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    int f1=0,f2=0,f3=0,baseprice=300;
+    private int f1=0,f2=0,f3=0,baseprice=300,extracheese=80,extratopping=70;
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         if(isVeg)
@@ -49,26 +49,27 @@ public class Pizza {
 
     public String getBill(){
         if(isVeg) {
-            bill += "Base Price Of The Pizza: " + 300 + "/n";
+            bill += "Base Price Of The Pizza: " + baseprice + "\n";
         }
         else {
-            bill += "Base Price Of The Pizza: " + 400 + "/n";
+            int p=baseprice+100;
+            bill += "Base Price Of The Pizza: " + p + "\n";
         }
         if(f1==1)
         {
-            bill+="Extra Cheese Added: 80"+"/n";
+            bill+="Extra Cheese Added: 80"+"\n";
         }
          if(f2==1 && this.isVeg==true)
         {
-            bill+="Extra Toppings Added: 70"+"/n";
+            bill+="Extra Toppings Added: 70"+"\n";
         }
          else if(f2==1 && !this.isVeg)
          {
-             bill+="Extra Toppings Added: 120"+"/n";
+             bill+="Extra Toppings Added: 120"+"\n";
          }
          if(f3==1)
          {
-             bill+="Paperbag Added: 20"+"/n";
+             bill+="Paperbag Added: 20"+"\n";
          }
          bill+="Total Price: "+this.price;
         return this.bill;
